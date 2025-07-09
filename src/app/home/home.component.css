@@ -1,0 +1,40 @@
+.home {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-image: url(/img/ranger.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+}
+
+.boas-vindas {
+    background-color: rgba(180, 180, 180, 0.7);
+    max-width: 420px;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 10px rgba(53, 14, 14, 0.555);
+}
+
+mat-card-header {
+    margin: 10px;
+}
+
+mat-card-title {
+    font-size: 30px;
+    margin-bottom: 15px;
+    color: #00378e;
+}
+
+mat-card-subtitle {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: black;
+}

@@ -1,0 +1,77 @@
+.login {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    box-sizing: border-box;
+    height: 100vh;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+.imagem {
+    display: flex;
+    flex: 2;
+    align-items: center;
+    justify-content: center;
+}
+
+.imagem img {
+    width: 100%;
+}
+
+.painel-login {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: center;
+    box-shadow: -2px 0 10px #1351d8;
+}
+
+.painel-login img {
+    width: 50%;
+    margin-top: 10%;
+}
+
+.boas-vindas {
+    margin-bottom: 30px;
+}
+
+.boas-vindas h2 {
+    color: #1351d8;
+}
+
+.btn, mat-form-field {
+    width: 80%;
+}
+
+mat-checkbox {
+    display: flex;
+    width: 90%;
+    justify-content: end;
+    margin-bottom: 20px;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.copy {
+    margin: 10px;
+}
+
+@media only screen and (min-width: 992px) {
+    .painel-login{
+        display: flex;
+        flex: 1;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .imagem {
+        display: none;
+    }
+
+    .painel-login {
+        width: 100%;
+    }
+}
