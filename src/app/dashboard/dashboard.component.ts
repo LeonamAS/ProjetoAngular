@@ -26,19 +26,13 @@ import { DashboardService } from '../services/dashboard.service';
   styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent implements OnInit {
-  // foods: Food[] = [
-  //   {value: 'steak-0', viewValue: 'Steak'},
-  //   {value: 'pizza-1', viewValue: 'Pizza'},
-  //   {value: 'tacos-2', viewValue: 'Tacos'},
-  // ];
 
-  constructor( private dashboardservice: DashboardService) {
+  constructor( private dashboardservice: DashboardService) {}
 
-  }
   ngOnInit(): void {
-    // this.dashboardservice.getVehicles().subscribe((res)=>{
-    //   console.log(vehicles)
-    // })
-  }
+    this.dashboardservice.getVehicles().subscribe((res)=>{
+      console.log(res.vehicles)
+    })
+  } 
 }
 

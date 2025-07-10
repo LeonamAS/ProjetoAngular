@@ -13,6 +13,6 @@ export class DashboardService {
   constructor(private http: HttpClient) { }
 
   getVehicles(): Observable<VeiculosAPI>{
-    return this.http.get<VeiculosAPI> (`${this.baseUrl}/vehicles`)
+    return this.http.get<VeiculosAPI>(`${this.baseUrl}/vehicles`)
   }
 }
