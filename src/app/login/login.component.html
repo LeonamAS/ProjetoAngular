@@ -28,6 +28,9 @@
                     </button>
                 </mat-form-field>
                 <mat-checkbox class="example-margin" labelPosition="before">Logar automaticamente</mat-checkbox>
+                <div *ngIf="loginError" class="error-message">
+                    Usuário ou senha inválidos.
+                </div>
                 <button type="submit" class="btn btn-primary btn-lg btn-block">Entrar</button>
             </form>
         </div>
