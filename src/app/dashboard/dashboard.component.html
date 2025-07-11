@@ -5,74 +5,69 @@
             <h1>Dashboard Ford</h1>
         </div>
         <div class="cards">
-            <div class="veiculo">
-                <mat-card appearance="outlined">
-                    <mat-card-header>
-                        <mat-card-title>Veículo</mat-card-title>
-                    </mat-card-header>
-                    <mat-card-content>
-                        <mat-form-field>
-                            <mat-label>Selecione o Veículo</mat-label>
-                            <mat-select>
-
-                            </mat-select>
-                        </mat-form-field>
-                    </mat-card-content>
-                </mat-card>
+            <div class="card">
+                <div class="card-header">
+                    Veículo
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="selectCarForms">
+                        <label>Selecione o Veículo</label>
+                        <select formControlName="carId" class="card-select">
+                            <option *ngFor="let vehicle of vehicles" [value]="vehicle.id">
+                                {{vehicle.vehicle}}
+                            </option>
+                        </select>
+                    </form>
+                </div>
             </div>
-            <div class="info1">
-                <mat-card appearance="outlined">
-                    <mat-card-header>
-                        <mat-card-title>Descrição</mat-card-title>
-                    </mat-card-header>
-                    <mat-card-content>
-                        <p>
-                            0
-                        </p>
-                    </mat-card-content>
-                </mat-card>
+            <div class="card">
+                <div class="card-header">
+                    Total de Vendas
+                </div>
+                <div class="card-body">
+                    <strong *ngIf="selectedVehicle">{{selectedVehicle.volumetotal}}</strong>
+                    <p class="card-text">Unid.</p>
+                </div>
             </div>
-            <div class="info2">
-                <mat-card appearance="outlined">
-                    <mat-card-header>
-                        <mat-card-title>Descrição</mat-card-title>
-                    </mat-card-header>
-                    <mat-card-content>
-                        <p>
-                            0
-                        </p>
-                    </mat-card-content>
-                </mat-card>
+            <div class="card">
+                <div class="card-header">
+                    Conectados
+                </div>
+                <div class="card-body">
+                    <strong *ngIf="selectedVehicle">{{selectedVehicle.connected}}</strong>
+                    <p class="card-text">Unid.</p>
+                </div>
             </div>
-            <div class="info3">
-                <mat-card appearance="outlined">
-                    <mat-card-header>
-                        <mat-card-title>Descrição</mat-card-title>
-                    </mat-card-header>
-                    <mat-card-content>
-                        <p>
-                            0
-                        </p>
-                    </mat-card-content>
-                </mat-card>
+            <div class="card">
+                <div class="card-header">
+                    Update Software
+                </div>
+                <div class="card-body">
+                    <strong *ngIf="selectedVehicle">{{selectedVehicle.softwareUpdates}}</strong>
+                    <p class="card-text">Unid.</p>
+                </div>
             </div>
         </div>
         <div class="imagem">
-            <img src="/img/broncoSport.png" alt="">
+            <img *ngIf="selectedVehicle" [src]="selectedVehicle.img">
         </div>
         <div class="tabela">
-            <table class="table">
-                <thead class="thead-dark">
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
+            <table class="table table-bordered">
+                <thead>
+                    <tr class="table-primary">
+                        <th scope="col">Código - Vin</th>
+                        <th scope="col">Odômetro</th>
+                        <th scope="col">Nível de Combustível</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Lat.</th>
+                        <th scope="col">Long.</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <th scope="row">1</th>
+                        <td>0</td>
+                        <!-- <td *ngIf="selectedVehicle">{{vehicleData.odometro}}</td> -->
+                        <td>0</td>
                         <td>0</td>
                         <td>0</td>
                         <td>0</td>

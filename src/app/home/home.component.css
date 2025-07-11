@@ -13,27 +13,27 @@
     background-size: contain;
 }
 
-.boas-vindas {
-    background-color: rgba(180, 180, 180, 0.7);
+.card {
     max-width: 420px;
-    padding: 15px;
     border-radius: 8px;
     margin-bottom: 20px;
-    box-shadow: 0 10px 10px rgba(53, 14, 14, 0.555);
+    box-shadow: 3px 3px 5px #00378e;
 }
 
-mat-card-header {
-    margin: 10px;
-}
-
-mat-card-title {
+.card-header {
     font-size: 30px;
-    margin-bottom: 15px;
-    color: #00378e;
+    padding: 20px;
+    color: #1351d8;
 }
 
-mat-card-subtitle {
-    font-size: 20px;
+.card-body {
     margin-bottom: 15px;
     color: black;
+    font-size: large;
+}
+
+.card-text {
+    margin-top: 20px;
+    font-size: medium;
+    text-align: left;
 }
