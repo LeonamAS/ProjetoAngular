@@ -1,4 +1,29 @@
+.dashboard {
+    flex-grow: 1;
+    overflow: scroll;
+}
+
+.texto {
+    text-align: center;
+    color: #00378e;
+    margin: 30px;
+}
+
+.texto h1 {
+    font-size: xx-large;
+}
+
 .cards {
     display: flex;
     justify-content: space-around;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.veiculo,
+.info1,
+.info2,
+.info3 {
+    max-width: 250px;
+    max-height: 200px;
 }
