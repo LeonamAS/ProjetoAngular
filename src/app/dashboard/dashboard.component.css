@@ -1,6 +1,5 @@
 .dashboard {
     flex-grow: 1;
-    overflow: scroll;
 }
 
 .texto {
@@ -48,6 +47,7 @@
     padding: 10px;
     width: 100%;
     margin-top: 8px;
+    border-radius: 5px;
 }
 
 label {
@@ -58,4 +58,35 @@ label {
     display: flex;
     justify-content: center;
     padding: 20px;
+}
+
+.busca-vin{
+    text-align: center;
+}
+
+.busca {
+    display: flex;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 992px) {
+    .imagem img {
+        width: 100%;
+    }
+
+    .card {
+        margin: 15px 5%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .card {
+        width: 150px;
+        height: 180px;
+        margin: 15px 7px;
+    }
+
+    .imagem img {
+        width: 100%;
+    }
 }

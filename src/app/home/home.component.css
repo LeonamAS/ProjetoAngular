@@ -37,3 +37,13 @@
     font-size: medium;
     text-align: left;
 }
+
+@media only screen and (max-width: 600px) {
+    .card {
+        margin: 20px;
+    }
+
+    .card-header {
+        font-size: 24px;
+    }
+}

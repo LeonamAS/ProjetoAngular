@@ -11,7 +11,7 @@
                 </div>
                 <div class="card-body">
                     <form [formGroup]="selectCarForms">
-                        <label>Selecione o Veículo</label>
+                        <label *ngIf="!selectedVehicle">Selecione o Veículo</label>
                         <select formControlName="carId" class="card-select">
                             <option *ngFor="let vehicle of vehicles" [value]="vehicle.id">
                                 {{vehicle.vehicle}}
@@ -51,29 +51,48 @@
         <div class="imagem">
             <img *ngIf="selectedVehicle" [src]="selectedVehicle.img">
         </div>
-        <div class="tabela">
-            <table class="table table-bordered">
-                <thead>
-                    <tr class="table-primary">
-                        <th scope="col">Código - Vin</th>
-                        <th scope="col">Odômetro</th>
-                        <th scope="col">Nível de Combustível</th>
-                        <th scope="col">Status</th>
-                        <th scope="col">Lat.</th>
-                        <th scope="col">Long.</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>0</td>
-                        <!-- <td *ngIf="selectedVehicle">{{vehicleData.odometro}}</td> -->
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                    </tr>
-                </tbody>
-            </table>
+        <div>
+            <div class="d-flex flex-column">
+                <h1 class="mb-4">Dados do Veículo</h1>
+                <div *ngIf="!vehicleData" class="busca">
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Digite o Código VIN"
+                                [(ngModel)]="vinInput" (keyup.enter)="getVehicleInfo()" />
+                            <button class="btn btn-primary" (click)="getVehicleInfo()">
+                                Buscar Dados
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="errorMessage" class="alert alert-danger mt-3 w-50">
+                    {{ errorMessage }}
+                </div>
+            </div>
+            <div *ngIf="vehicleData" class="table-responsive">
+                <table class="table table-bordered table-responsive fix-table-height">
+                    <thead>
+                        <tr class="table-primary">
+                            <th scope="col">Código - Vin</th>
+                            <th scope="col">Odômetro</th>
+                            <th scope="col">Nível de Combustível</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Lat.</th>
+                            <th scope="col">Long.</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{ vinInput }}</td>
+                            <td>{{ vehicleData.odometro }} km</td>
+                            <td>{{ vehicleData.nivelCombustivel }} %</td>
+                            <td>{{ vehicleData.status === 'on' ? 'Ligado' : 'Desligado' }}</td>
+                            <td>{{ vehicleData.lat }}</td>
+                            <td>{{ vehicleData.long }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
     <app-rodape></app-rodape>

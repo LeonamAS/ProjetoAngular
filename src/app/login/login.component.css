@@ -60,6 +60,15 @@ mat-checkbox {
     margin: 10px;
 }
 
+.mensagem-erro {
+    display: flex;
+    color: red;
+    margin-bottom: 20px;
+    font-size: large;
+    justify-content: space-evenly;
+    align-self: center;
+}
+
 @media only screen and (min-width: 992px) {
     .painel-login{
         display: flex;
