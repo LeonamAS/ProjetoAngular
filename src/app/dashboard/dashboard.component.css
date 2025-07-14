@@ -61,7 +61,7 @@ label {
 }
 
 .imagem img {
-    height: 90%;
+    width: 50%;
 }
 
 .busca-vin{
@@ -71,11 +71,6 @@ label {
 .busca {
     display: flex;
     justify-content: center;
-}
-
-.mensagem-erro {
-    justify-content: center;
-    margin: 5%;
 }
 
 @media only screen and (max-width: 992px) {
