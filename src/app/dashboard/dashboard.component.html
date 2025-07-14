@@ -52,10 +52,10 @@
             <img *ngIf="selectedVehicle" [src]="selectedVehicle.img">
         </div>
         <div>
-            <div class="d-flex flex-column">
+            <div class="d-flex flex-column busca-vin">
                 <h1 class="mb-4">Dados do Veículo</h1>
-                <div *ngIf="!vehicleData" class="busca">
-                    <div class="col-md-4">
+                <div class="busca">
+                    <div class="mb-4">
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Digite o Código VIN"
                                 [(ngModel)]="vinInput" (keyup.enter)="getVehicleInfo()" />
@@ -65,11 +65,11 @@
                         </div>
                     </div>
                 </div>
-                <div *ngIf="errorMessage" class="alert alert-danger mt-3 w-50">
+                <div *ngIf="errorMessage" class="alert alert-danger mt-3 mb-4 mensagem-erro">
                     {{ errorMessage }}
                 </div>
             </div>
-            <div *ngIf="vehicleData" class="table-responsive">
+            <div *ngIf="vehicleData" class="table-responsive mb-4">
                 <table class="table table-bordered table-responsive fix-table-height">
                     <thead>
                         <tr class="table-primary">

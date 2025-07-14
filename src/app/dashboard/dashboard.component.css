@@ -60,6 +60,10 @@ label {
     padding: 20px;
 }
 
+.imagem img {
+    height: 90%;
+}
+
 .busca-vin{
     text-align: center;
 }
@@ -67,6 +71,11 @@ label {
 .busca {
     display: flex;
     justify-content: center;
+}
+
+.mensagem-erro {
+    justify-content: center;
+    margin: 5%;
 }
 
 @media only screen and (max-width: 992px) {
